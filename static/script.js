@@ -84,7 +84,6 @@ function addDecimalPoint() {
     }
 }
 
-
 function addOperator(operator) {
     if (currentNumber.length == 0) {
         return
@@ -109,7 +108,6 @@ function addOperator(operator) {
         writeToDisplay()
     }
 }
-
 
 function changePolarity() {
     if (currentNumber.length == 0) {
@@ -146,7 +144,6 @@ function clearClick() {
         clearNum()
     }
 }
-
 
 function calculate() {
 
