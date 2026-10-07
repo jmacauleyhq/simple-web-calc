@@ -4,18 +4,14 @@
     padding: 0;
 }
 
-
-
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(135deg, rgb(19, 219, 122) 0%, rgb(205, 109, 218) 100%);
-    font-family: 'JetBrains Mono', monospace;
+    background: linear-gradient(135deg, rgb(19, 219, 122) 15%, rgb(205, 109, 218) 100%);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, monospace;
 }
-
-
 
 .calculator{
     background: radial-gradient(circle at 50% 0%, rgb(72, 64, 64) 0%, rgb(50, 44, 44) 100%);
@@ -36,14 +32,12 @@ body {
         inset 0px 2px 3px rgba(255, 255, 255, 0.1); /* Inner edge casing gloss reflection */
 }
 
-
-
 .display{
     background-color: rgb(26, 28, 32);
     color: rgb(255, 255, 255);
 
-    font-size: 2.8rem;
-    font-weight: 300;
+    font-size: 2.5rem;
+    font-weight: 500;
     text-align: right;
 
     padding: 20px 25px;
@@ -60,11 +54,10 @@ body {
     border-right: 2px solid rgba(255, 255, 255, 0.08);
 
     box-shadow:
-
-    inset 0px 10px 15px rgba(0, 0, 0, 0.95), /* Heavy overhead shadow inside the carved pocket */
-    inset 0px 4px 6px rgba(0, 0, 0, 0.8), /* Second tighter layer for crisp edge definition */
-    inset 0px -4px 10px rgba(255, 255, 255, 0.04), /* Light glare reflection at the bottom glass base */
-    0px 2px 2px rgba(255, 255, 255, 0.05); /* Sharp external bottom bevel highlight */
+        inset 0px 10px 15px rgba(0, 0, 0, 0.95), /* Heavy overhead shadow inside the carved pocket */
+        inset 0px 4px 6px rgba(0, 0, 0, 0.8), /* Second tighter layer for crisp edge definition */
+        inset 0px -4px 10px rgba(255, 255, 255, 0.04), /* Light glare reflection at the bottom glass base */
+        0px 2px 2px rgba(255, 255, 255, 0.05); /* Sharp external bottom bevel highlight */
 }
 
 .buttons{
@@ -81,7 +74,7 @@ body {
     align-items: center;
 
     font-weight: 500;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, monospace;
 
     border: none;
     border-radius: 50%;
@@ -95,12 +88,10 @@ body {
     transition: all 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-
-
-button.utility{
+.utility{
     background: linear-gradient(135deg, rgb(190, 180, 180) 0%, rgb(150, 140, 140) 100%);
 
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, monospace;
     font-size: 2rem;
 
     box-shadow:
@@ -110,9 +101,12 @@ button.utility{
         0px 0px 20px rgba(0, 0, 0, 0.5);
 }
 
+.utility svg{
+    width: 55%;
+    stroke-width: 2px;
+}
 
-
-button.operator{
+.operator{
     background: linear-gradient(135deg, rgb(240, 185, 20) 0%, rgb(200, 150, 10) 100%);
 
     font-size: 2.1rem;
@@ -124,9 +118,12 @@ button.operator{
         0px 0px 20px rgba(0, 0, 0, 0.5);
 }
 
+.operator svg{
+    width: 50%;
+    stroke-width: 2.5px;    
+}
 
-
-button.number{
+.number{
     background: linear-gradient(135deg, rgb(110, 100, 100) 0%, rgb(80, 72, 72) 100%);
 
     font-size: 1.8rem;
