@@ -1,3 +1,7 @@
+# Git
+.git/
+.gitignore
+
 # Python virtual environment
 venv/
 .venv/
