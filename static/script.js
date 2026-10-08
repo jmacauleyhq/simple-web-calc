@@ -6,10 +6,13 @@ let currentNegative = false
 
 let onSecondNum = false
 let allClear = false
+let ansDisplay = false
 
 let numA = null
 let numB = null
 let _operator = null
+
+let lastAns = null
 
 function writeToDisplay() {
     if (currentNumber.length == 0) {
@@ -42,9 +45,7 @@ function clearAll() {
     numB = null
     _operator = null
 
-    allClear = false
     changeClearButton()
-
     writeToDisplay()
 }
 
@@ -60,6 +61,11 @@ function clearNum() {
 }
 
 function addDigit(digit) {
+    if (ansDisplay){
+        ansDisplay = false
+        clearNum()
+    }
+
     if (currentNumber.length < 12) {
         currentNumber += digit
         allClear = false
@@ -114,6 +120,11 @@ function changePolarity() {
         return
     }
 
+    if (ansDisplay){
+        ansDisplay = false
+        clearNum()
+    }
+
     if (currentNegative){
         currentNegative = false
     }
@@ -125,6 +136,12 @@ function changePolarity() {
 }
 
 function backspace() {
+    if (ansDisplay){
+        ansDisplay = false
+        clearNum()
+        return
+    }
+
     if (currentNumber.length != 0) {
         currentNumber = currentNumber.slice(0, -1)
 
@@ -139,12 +156,73 @@ function backspace() {
 function clearClick() {
     if (allClear){
         clearAll()
+        console.log("clearing all")
     }
     else{
         clearNum()
+        console.log("clearing number")
     }
 }
 
-function calculate() {
+function getAnswer() {
+    if (ansDisplay){
+        return
+    }
+    return
+    clearNum()
+}
 
+async function calculateAns() {
+    if (!onSecondNum || currentNumber.length == 0){
+       return 
+    }
+
+    numB = Number(currentNumber)
+
+    if (currentNegative){
+        numB = -numB
+    }
+
+    console.log(numA + "," + numB + "," + _operator)
+
+    const payload = {
+        numA: numA,
+        numB: numB,
+        _operator: _operator
+    }
+
+    try {
+        const response = await fetch("/calc", {
+            method: "POST",
+            headers: {
+            "Content-Type": "application/json"
+            },
+            body: JSON.stringify(payload)
+        })
+
+        const data = await response.json()
+        
+        ansDisplay = true
+        
+        screen.textContent = data.result
+        lastAns = Number(data.result)
+
+        if (data.result !== "Error") {
+            numA = Number(data.result);
+            currentNumber = data.result;    
+        }
+        else {
+            numA = null;
+            numB = null;
+            currentNumber = "";
+        }
+
+        _operator = null;
+        onSecondNum = false;
+    }
+    catch (error) {
+        // This blocks fires if the server is offline or a network dropout happens
+        console.error("Async communication failure with Flask:", error);
+        screen.textContent = "Error";
+    }
 }
