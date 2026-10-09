@@ -8,7 +8,7 @@ permissions:
   contents: read
 
 jobs:
-  test:
+  Build-Docker-Image:
     runs-on: ubuntu-latest
 
     steps:
