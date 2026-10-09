@@ -47,15 +47,4 @@ def calc():
     return jsonify({"result": str(result)})
 
 if __name__ == '__main__':
-    # 1. Turn on Flask's internal debugger for Python code updates
-    app.debug = True
-    
-    # 2. Wrap your app in a LiveReload server instance
-    server = Server(app.wsgi_app)
-    
-    # 3. Tell it to watch your frontend assets for changes
-    server.watch('templates/*.*')
-    server.watch('static/*.*')
-    
-    # 4. Run the live server on the default port 8000
-    server.serve(port=5500, host='127.0.0.1')
+    app.run(host="0.0.0.0", port=5500)
