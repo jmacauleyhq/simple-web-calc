@@ -1,3 +1,4 @@
+
 name: Calculator CI
 
 on:
@@ -8,24 +9,41 @@ permissions:
   contents: read
 
 jobs:
-  Test:
-    name: Run Pytest
+  test:
+    name: Test Frontend and Backend
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # Frontend checks
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install frontend dependencies
+        run: npm ci
+
+      - name: Validate HTML
+        run: npx html-validate "templates/**/*.html"
+
+      - name: Check JavaScript syntax
+        run: node --check static/script.js
+
+      # Backend tests
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.14"
 
-      - name: Install dependencies
+      - name: Install Python dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install pytest
 
-      - name: Run tests
+      - name: Run Python tests
         run: python -m pytest

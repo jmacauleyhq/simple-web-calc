@@ -1,0 +1,22 @@
+{
+  "name": "simple-web-calc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmacauleyhq/simple-web-calc.git"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/jmacauleyhq/simple-web-calc/issues"
+  },
+  "homepage": "https://github.com/jmacauleyhq/simple-web-calc#readme",
+  "devDependencies": {
+    "html-validate": "^11.16.2"
+  }
+}

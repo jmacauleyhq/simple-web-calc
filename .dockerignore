@@ -10,10 +10,20 @@ venv/
 # Python cache
 __pycache__/
 *.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Node.js
+node_modules/
+npm-debug.log*
 
 # Environment variables / secrets
 .env
 .env.*
+!.env.example
 
 # IDE/editor files
 .vscode/
