@@ -165,11 +165,13 @@ function clearClick() {
 }
 
 function getAnswer() {
-    if (ansDisplay){
+    if (lastAns == null){
+        console.log(lastAns)
         return
     }
-    return
-    clearNum()
+
+    currentNumber = lastAns
+    screen.textContent = "Ans"
 }
 
 async function calculateAns() {
