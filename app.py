@@ -1,8 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 from calculate import addition,subtraction,multiplication,division
 
-from livereload import Server
-
 app = Flask(__name__)
 
 @app.route("/")
