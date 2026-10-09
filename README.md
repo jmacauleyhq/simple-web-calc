@@ -141,7 +141,7 @@ Through this project, I gained practical experience with:
 
 ## Future Improvements
 
-- Add automated tests
+- Add automated tests for the frontend
 - Improve error handling and input validation
 - Expand calculator functionality
 - Improve the user interface and accessibility
