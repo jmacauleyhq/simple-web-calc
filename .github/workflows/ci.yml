@@ -8,7 +8,8 @@ permissions:
   contents: read
 
 jobs:
-  Build-Docker-Image:
+  Test:
+    name: Run Pytest
     runs-on: ubuntu-latest
 
     steps:
@@ -28,6 +29,3 @@ jobs:
 
       - name: Run tests
         run: python -m pytest
-
-      - name: Build Docker image
-        run: docker build -t docker-calc .

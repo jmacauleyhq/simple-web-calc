@@ -170,8 +170,9 @@ function getAnswer() {
         return
     }
 
-    currentNumber = lastAns
-    screen.textContent = "Ans"
+    currentNumber = String(lastAns)
+    ansDisplay = true
+    screen.textContent = "Ans"  
 }
 
 async function calculateAns() {
@@ -207,7 +208,7 @@ async function calculateAns() {
         ansDisplay = true
         
         screen.textContent = data.result
-        lastAns = Number(data.result)
+        lastAns = String(data.result)
 
         if (data.result !== "Error") {
             numA = Number(data.result);

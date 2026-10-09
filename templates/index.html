@@ -20,13 +20,24 @@
         <div class="buttons">
             <!-- Row 1 -->
             <button class = "utility" id = "clear-btn" onclick = "clearClick()">AC</button>
-            <button class = "utility" id = "backspace-btn" onclick = "backspace()">
+            <button 
+                class = "utility" 
+                id = "backspace-btn" 
+                aria-label="Backspace"
+                onclick = "backspace()"
+            >
+
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 9.75 14.25 12m0 0 2.25 2.25M14.25 12l2.25-2.25M14.25 12 12 14.25m-2.58 4.92-6.374-6.375a1.125 1.125 0 0 1 0-1.59L9.42 4.83c.21-.211.497-.33.795-.33H19.5a2.25 2.25 0 0 1 2.25 2.25v10.5a2.25 2.25 0 0 1-2.25 2.25h-9.284c-.298 0-.585-.119-.795-.33Z" />
                 </svg>
             </button>
             <button class = "utility" onclick="changePolarity()">+/-</button>
-            <button class = "operator" id  onclick = "addOperator(1)">
+            <button 
+                class = "operator" 
+                aria-label="Divide"
+                id  onclick = "addOperator(1)"
+                >
+
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4.499 11.998h15m-7.5-6.75h.008v.008h-.008v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM12 18.751h.007v.007H12v-.007Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
                 </svg>
@@ -36,7 +47,12 @@
             <button class = "number" onclick = "addDigit(1)">1</button>
             <button class = "number" onclick = "addDigit(2)">2</button>
             <button class = "number" onclick = "addDigit(3)">3</button>
-            <button class = "operator" onclick = "addOperator(2)">
+            <button
+                class = "operator" 
+                aria-label="Multiply"
+                onclick = "addOperator(2)"
+                >
+
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
                 </svg>
@@ -46,7 +62,12 @@
             <button class = "number" onclick = "addDigit(4)">4</button>
             <button class = "number" onclick = "addDigit(5)">5</button>
             <button class = "number" onclick = "addDigit(6)">6</button>
-            <button class = "operator" onclick = "addOperator(3)">
+            <button 
+                class = "operator" 
+                aria-label="Subtraction"
+                onclick = "addOperator(3)"
+                >
+
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
                 </svg>
@@ -56,7 +77,12 @@
             <button class = "number" onclick = "addDigit(7)">7</button>
             <button class = "number" onclick = "addDigit(8)">8</button>
             <button class = "number" onclick = "addDigit(9)">9</button>
-            <button class = "operator" onclick = "addOperator(4)">
+            <button 
+                class = "operator" 
+                aria-label="Addition"
+                onclick = "addOperator(4)"
+                >
+
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                 </svg>
@@ -66,7 +92,12 @@
             <button class = "number" onclick = "getAnswer()">Ans</button>
             <button class = "number" onclick = "addDigit(0)">0</button>
             <button class = "number" onclick = "addDecimalPoint()">.</button>
-            <button class = "operator" onclick = "calculateAns()">
+            <button 
+                class = "operator" 
+                aria-label="Equals"
+                onclick = "calculateAns()"
+            >
+
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4.499 8.248h15m-15 7.501h15" />
                 </svg>
